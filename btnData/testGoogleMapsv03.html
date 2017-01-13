@@ -55,7 +55,7 @@
                       });
 
                 }   // end if
-                else { console.log("error re" + results[0].formatted_address); }
+                else { console.log("error re" + (results? results[0].formatted_address : "No Results")); }
             });     // end geocoder.geocode function
           }         // end for loop for scraped data
 
