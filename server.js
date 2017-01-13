@@ -114,7 +114,7 @@ app.get('/scrape', function(req, res) {
 		//convert the obj to json obj
 		var ufoObj = JSON.stringify(result);
 
-	  	fs.writeFile("ufo.json", ufoObj, function(err) {    
+	  	fs.writeFile("./btnData/ufo.json", ufoObj, function(err) {    
 		// If the code experiences any errors it will log the error to the console. 
 			if(err) {
 				return console.log(err);
