@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // make public a static dir
-app.use(express.static('public'));
+app.use(express.static('./'));
 var ufo=[], ufoDataStatus = false;
 var readUfo = function () {
 
