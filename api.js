@@ -4,6 +4,7 @@
 // Dependencies:
 var request = require('request'); // Snatches html from urls
 var cheerio = require('cheerio'); // Scrapes our html
+
 // NPM Package for reading and writing files
 var fs = require('fs'); 
 
@@ -15,18 +16,22 @@ console.log("\n******************************************\n" +
 
 
 // run request to grab the html from awwards's clean website section
-request("https://mufoncms.com/cgi-bin/report_handler.pl?req=latest_reports", function (error, response, html) {
-  
+ request("https://mufoncms.com/cgi-bin/report_handler.pl?req=latest_reports", function (error, response, html) {
+ //request("www.ufostalker.com/?mufon=true", function (error, response, html) {
+   console.log('request for scrape', error, response);
+      
     // load the html into cheerio
       var $ = cheerio.load(html);
-
+      console.log("row", $("table.event-table tr"));
     // make an empty array for saving our scraped info
     var result = [];
 
     $("form[name=mufon_form] table tr").each(function(i, element){
-  	/* Cheerio's find method will "find" the first matching child element in a parent.
-  	 *    We start at the current element, then "find" td.
-  	*/
+      //$("table.event-table tr").each(function(i, element){
+        console.log("table row", element);
+    /* Cheerio's find method will "find" the first matching child element in a parent.
+     *    We start at the current element, then "find" td.
+    */
     var ufosightingList = [], rowDetails=[];
     //adding th and td to an array
     $(element).find('td').each(function(j, ele){
@@ -36,6 +41,15 @@ request("https://mufoncms.com/cgi-bin/report_handler.pl?req=latest_reports", fun
 
     });
     // Define JSON obj
+
+
+     // var ufosighting =  {
+     //      image: rowDetails[0],                // id of the sighting*
+     //        occured: rowDetails[1],     
+     //        summary: rowDetails[2],     // date of when the sighting was observed
+     //        location: rowDetails[3],         // date of when the sighting was submitted
+     //        media: rowDetails[4]
+     //    };
     var ufosighting =  {
         caseNumber: rowDetails[0],                // id of the sighting*
         sightDate: rowDetails[1],     
@@ -49,7 +63,7 @@ request("https://mufoncms.com/cgi-bin/report_handler.pl?req=latest_reports", fun
     };
     ufosightingList.push(ufosighting);
     // push the row details into the result array
-  	result.push({ufosightingList});
+    result.push({ufosightingList});
   });
   //convert the obj to json obj
   var ufoObj = JSON.stringify(result);
@@ -62,8 +76,8 @@ request("https://mufoncms.com/cgi-bin/report_handler.pl?req=latest_reports", fun
     }
 
     // Otherwise, it will print: "ufo.json was updated!"
-    //console.log("ufo.json was updated!");
+    console.log("ufo.json was updated!");
 }); 
   // with each link scraped, log the result to the console
-  //console.log("UFO Object",result);
+  console.log("UFO Object",result);
 });
