@@ -3,11 +3,6 @@
   "title": "Creative",
   "version": "3.3.7+1",
   "homepage": "http://startbootstrap.com/template-overviews/creative",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
   "author": "Start Bootstrap",
   "license": {
     "type": "MIT",
@@ -26,14 +21,6 @@
     "jquery": "^1.11.3",
     "magnific-popup": "^1.1.0",
     "scrollreveal": "^3.1.4"
-  },
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "cheerio": "^0.20.0",
-    "express.js": "^1.0.0",
-    "fs.js": "0.0.1",
-    "path.js": "^1.0.7",
-    "request": "^2.79.0"
   },
   "repository": {
     "type": "git",

@@ -1,0 +1,56 @@
+* {
+	box-sizing: border-box;
+/*	color: white !important;*/
+}
+
+/*<style type="text/css">
+			header, section, footer, aside, nav, article, figure, figcaption {
+				display: block;}*/
+
+style.css
+			/*main section*/
+			#container {
+				padding-top: 130px;
+				float: center;
+			}
+			.jumbotron {
+
+			}
+			}
+			.main-section {
+				background: inherit;
+				padding: 30px;
+				margin: 0 0 40px 0;
+				width: 100%;
+				max-width: 650px;
+				float: left;
+				border: 1px solid #ddd;
+			}
+
+			.page-header {
+				background: inherit;
+			}
+			h2 text-center {
+				background-color: skyblue;
+			}
+			#masterhead1 {
+				background-color: inherit;
+			}
+			.page-header {
+				height: 50px;
+				width: 50;
+				padding: 20px;
+			}
+			h1 {
+				text-indent: -9999px;
+				/*width: 940px;
+				height: 130px;*/
+				margin: 0px;}
+			nav, footer {
+				clear: both;
+				color: #ffffff;
+				background-color: inherit;
+				height: 30px;}
+			nav ul {
+				margin: 0px;
+				padding: 5px 0px 5px 30px;}

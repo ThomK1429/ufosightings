@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UFO Sightings</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+<div class="container">
+    <div class="jumbotron">
+        <div class="container">
+        <h1>UFO Sightings...</h1>
+        <button class="flat-butt flat-primary-butt flat-outer-butt" id="startScrape" >New Scrape</button>
+        <button class="flat-butt flat-primary-butt flat-outer-butt" id="startNews" >UFO Information</button>
+
+        </div>
+    </div>
+
+        <div class="row">
+
+            <div class="col-lg-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>UFO Sighting Info</strong></h3>
+                    </div>
+                    <div class="panel-body" id="wellSection">
+
+
+<!--                        <div class="well">
+                            <h2 id="name">Yoda</h2>
+
+
+                            <div id="stats">
+                                <h3><strong>Role:</strong> <span id="role">Jedi Master</span></h3>
+                                <h3><strong>Age:</strong> <span id="age">900</span></h3>
+                                <h3><strong>Force Points:</strong> <span id="forcePoints">2000</span></h3>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+            </div>          
+        </div>
+    </div>
+
+<script src="app.js"></script>
+    <!-- <script type="text/javascript" src="./server.js"></script> -->
+   <script type="text/javascript">
+        
+        // var currentURL = window.location.origin;
+
+        // console.log(currentURL + "/api");
+
+        // $.get(currentURL + "/api", function(data){
+
+        //     for (var i =2; i < data.length; i++){
+        //         console.log(data[i]['ufosightingList'][0].posted );
+        //         var wellSection = $("<div>");
+        //         wellSection.addClass('well');
+        //         wellSection.attr('id', 'characterWell-' + i)
+        //         $('#wellSection').append(wellSection);              
+
+        //         $("#characterWell-" + i).append("<h2>CASE NUMBER: " + data[i]['ufosightingList'][0].caseNumber + "</h2>");
+                
+        //         $("#characterWell-" + i).append("<p>SIGHT DATE: " + data[i]['ufosightingList'][0].sightDate + "</p>");
+        //         $("#characterWell-" + i).append("<p>CITY: " + data[i]['ufosightingList'][0].city + 
+        //             ";      STATE: "+data[i]['ufosightingList'][0].state +
+        //             ";      DURATION: "+data[i]['ufosightingList'][0].duration +
+        //             "</p>");
+        //         $("#characterWell-" + i).append("<p>DETAILS: " + data[i]['ufosightingList'][0].posted + "</p>");
+                
+                
+        //     }
+        // })
+
+    </script>
+</body>
+
+</html>
