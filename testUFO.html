@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.30.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.30.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
+<body>
+
+<!-- <button id="ufoMap">ufo maps</button> -->
+<div id='map'>
+
+    <script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoibHZvayIsImEiOiJjaXhxdWpndjgwYWR2MzNudWtieW4wZ3RzIn0.HqlhAzfRdrL2of6EMwPNdg';
+    var map = new mapboxgl.Map({
+        container: 'map', // container id
+        style: 'mapbox://styles/mapbox/streets-v9', //stylesheet location
+        center: [-74.50, 40], // starting position
+        zoom: 9 // starting zoom
+        name: name, //name of sighting
+        description: description, //description of sighting
+    });
+
+
+// client.createDataset({ name: 'foo', description: 'bar' }, function(err, dataset) {
+//   console.log(dataset);
+  // {
+  //   "owner": {account},
+  //   "id": {dataset id},
+  //   "name": "foo",
+  //   "description": "description",
+  //   "created": {timestamp},
+  //   "modified": {timestamp}
+  // }
+});
+
+// var ufoSighting = {
+
+//     caseNumber: 0,                // id of the sighting*
+//     sightDate: "01/01/1970",
+//     // sightTime: "01:01"// date of when the sighting was observed
+//     // posted: "01/01/1970",         // date of when the sighting was submitted
+//     city: "Sacramento",        // the city where the sighting was observed
+//     state: "CA",         // the state where the sighting was observed
+//     shape: "orb",        // shape of the sighting
+//     duration: 0,    // the amount of time in milliseconds that the sighting lasted
+//     summary: "woah"
+
+// };
+
+
+var city = 'mode';
+var state = 'query';
+var title = 'ufo';
+    var queryURL = "https://api.mapbox.com" + city + state+ "/geocoding/v5/{mode}/{query}.json";
+    $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+         console.log(response);
+    });
+
+    $.ajax({url: "https://api.mapbox.com/geocoding/v5/mapbox.places/Sacramento%2C%20CA.json?access_token=pk.eyJ1IjoibHZvayIsImEiOiJjaXhxdWpndjgwYWR2MzNudWtieW4wZ3RzIn0.HqlhAzfRdrL2of6EMwPNdg", method: 'GET'}).done(function(response) {
+         console.log(response);
+    });
+
+
+  //   {
+  // "type": "FeatureCollection",
+  // "query": [
+  //   "sacramento",
+  //   "ca"
+  // ],
+  // "features": [
+  //   {
+  //     "id": "place.10334071911685100",
+  //     "type": "Feature",
+  //     "text": "Sacramento",
+  //     "place_name": "Sacramento, California, United States",
+  //     "relevance": 0.998,
+  //     "properties": {
+  //       "wikidata": "Q18013"
+  //     },
+
+  // $('#ufoMap').on('click', function() {
+  //     var queryURL = "https://api.mapbox.com/uploads/v1/{username}/credentials?access_token=pk.eyJ1IjoibHZvayIsImEiOiJjaXhxdWpndjgwYWR2MzNudWtieW4wZ3RzIn0.HqlhAzfRdrL2of6EMwPNdg";
+  //   $.ajax({url:  queryURL, method:  "GET"})
+  //   .done(function(response) {
+  //     var ufoimageURL = response.ufodata.image_original_url;
+  //     var ufoImage = $"<img>");
+  //     ufoImage.attr('src', imageURL);
+  //     ufoImage.attr('alt', 'ufo image');
+
+  //     $('#images').prepend(ufoImage);
+  //   }
+
+  //   })
+</script>
+
+</div>

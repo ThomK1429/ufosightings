@@ -1,0 +1,27 @@
+
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+<script src='http://code.jquery.com/jquery-2.1.3.min.js'></script>
+<script type="text/javascript">
+    var title = 'banking+money';
+    var queryURL = "http://www.omdbapi.com/?t=" + title + "&y=&plot=short&r=json";
+    $.ajax({url: queryURL, method: 'GET'}).done(function(response) {
+         console.log(response);
+    });
+
+    $.ajax({url: "http://www.khanacademy.org/api/v1/topictree", method: 'GET'}).done(function(response) {
+         console.log(response);
+    });
+</script>
+
+
+</body>
+</html>
+
+<!-- JSONP
+
+All API methods return JSONP if you add a callback parameter (&callback=yourFunction) to your request. -->
