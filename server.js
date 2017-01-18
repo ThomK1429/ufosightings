@@ -27,7 +27,8 @@ var cheerio = require('cheerio');
 app.use(bodyParser.urlencoded({
   extended: false
 }));
-
+//getting data from diffrent ponts like file json
+var ufoData = require("./btnData/js/ufosighting.js");
 // make public a static dir
 app.use(express.static('./'));
 var ufo=[], ufoDataStatus = false;
@@ -152,6 +153,41 @@ app.get('/articles', function(req, res){
 	else{
 		res.json(ufo);
 	}
+})
+
+
+// Search for Specific ufo (or all ufo) - provides JSON
+app.get('/ufofile', function(req, res){
+	console.log("GET /ufofile");
+	res.json(ufoData.getFromFile());
+})
+
+
+// Search for Specific ufo (or all ufo) - provides JSON
+app.get('/ufojson', function(req, res){
+	console.log("GET /ufojson");
+	res.json(ufoData.getFromJson());
+})
+
+// Search for Specific ufo (or all ufo) - provides JSON
+app.get('/ufosite', function(req, res){
+	console.log("GET /ufosite");
+	res.json(ufoData.getFromSite());
+})
+
+// Get Lat/Lng Geocode Data Only
+app.get('/geocode', function(req, res){
+	console.log("GET /geocode");
+	ufoData.getGeocodeData(function(err, results){
+		console.log("++++", results);
+		if (err) {
+			console.log("++++Error:", err);
+			res.json({error: err});
+		} else {
+			console.log("++++Geocode Results:", results);
+			res.json(results);
+		}
+	});
 })
 
 // Starts the server to begin listening 
