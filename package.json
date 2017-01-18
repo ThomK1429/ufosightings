@@ -32,6 +32,7 @@
     "cheerio": "^0.20.0",
     "express.js": "^1.0.0",
     "fs.js": "0.0.1",
+    "node-geocoder": "^3.15.2",
     "path.js": "^1.0.7",
     "request": "^2.79.0"
   },
